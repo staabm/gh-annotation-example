@@ -1,7 +1,6 @@
 name: Example Annotations
 
-on:
-  push:
+on: push
 
 jobs:
 
