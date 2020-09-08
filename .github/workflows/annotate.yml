@@ -1,0 +1,19 @@
+name: Example Annotations
+
+on:
+  push:
+
+jobs:
+
+  annotate:
+    name: PHPStan
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - run: echo "::error file=README.md,line=1::ERR: test annotation"
+    - run: echo "::error file=README.md,line=2::ERR: test annotation"
+    - run: echo "::warning file=README.md,line=3::WARN: test annotation"
+    - run: echo "::error ::ERR: global test annotation" 
+    - run: echo "::warning ::WARN: global test annotation" # global
